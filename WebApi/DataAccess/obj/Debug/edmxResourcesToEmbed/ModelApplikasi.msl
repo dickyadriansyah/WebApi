@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OctopusDBModelStoreContainer" CdmEntityContainer="OctopusDBEntities">
+    <EntitySetMapping Name="siswas">
+      <EntityTypeMapping TypeName="OctopusDBModel.siswa">
+        <MappingFragment StoreEntitySet="siswa">
+          <ScalarProperty Name="id_siswa" ColumnName="id_siswa" />
+          <ScalarProperty Name="nama_siswa" ColumnName="nama_siswa" />
+          <ScalarProperty Name="alamat" ColumnName="alamat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

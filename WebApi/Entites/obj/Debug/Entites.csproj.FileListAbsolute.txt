@@ -1,0 +1,7 @@
+D:\dicky\C#\API4\WebApi\Entites\bin\Debug\Entites.dll.config
+D:\dicky\C#\API4\WebApi\Entites\bin\Debug\Entites.dll
+D:\dicky\C#\API4\WebApi\Entites\bin\Debug\Entites.pdb
+D:\dicky\C#\API4\WebApi\Entites\bin\Debug\EntityFramework.dll
+D:\dicky\C#\API4\WebApi\Entites\bin\Debug\EntityFramework.xml
+D:\dicky\C#\API4\WebApi\Entites\obj\Debug\Entites.dll
+D:\dicky\C#\API4\WebApi\Entites\obj\Debug\Entites.pdb

@@ -1,0 +1,13 @@
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Utilities.dll
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Utilities.pdb
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.Unity.dll
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.Unity.xml
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\dicky\C#\API4\WebApi\Utilities\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\dicky\C#\API4\WebApi\Utilities\obj\Debug\Utilities.dll
+D:\dicky\C#\API4\WebApi\Utilities\obj\Debug\Utilities.pdb

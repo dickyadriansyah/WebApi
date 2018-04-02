@@ -1,0 +1,7 @@
+D:\dicky\C#\API4\WebApi\InterfaceApi\bin\Debug\InterfaceApi.dll
+D:\dicky\C#\API4\WebApi\InterfaceApi\bin\Debug\InterfaceApi.pdb
+D:\dicky\C#\API4\WebApi\InterfaceApi\bin\Debug\Entites.dll
+D:\dicky\C#\API4\WebApi\InterfaceApi\bin\Debug\Entites.pdb
+D:\dicky\C#\API4\WebApi\InterfaceApi\obj\Debug\InterfaceApi.csprojResolveAssemblyReference.cache
+D:\dicky\C#\API4\WebApi\InterfaceApi\obj\Debug\InterfaceApi.dll
+D:\dicky\C#\API4\WebApi\InterfaceApi\obj\Debug\InterfaceApi.pdb
