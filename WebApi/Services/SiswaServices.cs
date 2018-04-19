@@ -24,14 +24,18 @@ namespace Services
         }
 
 
+
         public GenericResponse ConfirmDataSiswa(GenericRequest @params)
         {
-            var container = new CompleteDataSiswa(@params) { repository = _unitOfWork };
+            var output = "";
 
-            CompleteDataOperationsSiswa.Initialize(ref container);
+            var se = new SiswaEntity();
+            se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
 
-            var response = JsonConvert.SerializeObject(new CompleteSiswaEntity() { siswa = container.siswa });
-            return new GenericResponse() { data = response };
+            CompleteDataOperationsSiswa.Initialize2(se, _unitOfWork, @params);
+
+            output = JsonConvert.SerializeObject(se);
+            return new GenericResponse() { data = output };
         }
 
         public List<SiswaEntity> GetAllSiswa()
@@ -43,6 +47,20 @@ namespace Services
                 return data;
             }
 
+        }
+
+        public GenericResponse SaveDataSiswa(GenericRequest @params)
+        {
+            var output = "";
+
+            var se = new SiswaEntity();
+            se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
+
+            CompleteDataOperationsSiswa.Initialize(se, _unitOfWork, @params);
+
+            output = JsonConvert.SerializeObject(se);
+
+            return new GenericResponse() { data = output };
         }
     }
 }
