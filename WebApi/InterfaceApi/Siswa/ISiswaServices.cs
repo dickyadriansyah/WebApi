@@ -8,6 +8,8 @@ namespace InterfaceApi.Siswa
     {
         GenericResponse ConfirmDataSiswa(GenericRequest @params);
 
+        GenericResponse SaveDataSiswa(GenericRequest @params);
+
         List<SiswaEntity> GetAllSiswa();
     }
 }
