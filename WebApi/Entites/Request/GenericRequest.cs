@@ -9,5 +9,7 @@ namespace Entites.Request
     public class GenericRequest
     {
         public string action { get; set; }
+
+        public string json_data { get; set; }
     }
 }
