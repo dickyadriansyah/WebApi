@@ -39,6 +39,11 @@ namespace Services
                 var listSiswa = _siswaSerivices.GetAllSiswa();
                 response.data = JsonConvert.SerializeObject(listSiswa);
             }
+            else if (action.Trim().Equals("SaveDataSiswa", StringComparison.InvariantCultureIgnoreCase))
+            {
+                var result = _siswaSerivices.SaveDataSiswa(request);
+                response.data = result.data;
+            }
             else
             {
                 var resp = new HttpResponseMessage() { StatusCode = System.Net.HttpStatusCode.BadRequest, Content = new StringContent("{\"error\":\"Action Not Found\"}") };
