@@ -23,20 +23,85 @@ namespace Services
             _unitOfWork = unitOfWork;
         }
 
-
-
         public GenericResponse ConfirmDataSiswa(GenericRequest @params)
         {
-            var output = "";
+            var response = false;
+            var container = new CompleteDataSiswa(@params) { repository = _unitOfWork };
+           
 
-            var se = new SiswaEntity();
-            se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
+            CompleteDataOperationsSiswa.InitializeUpdate(ref container);
 
-            CompleteDataOperationsSiswa.Initialize2(se, _unitOfWork, @params);
+            try
+            {
+                if (container != null)
+                {
+                    response = true;
+                }
+            }
+            catch (Exception)
+            {
 
-            output = JsonConvert.SerializeObject(se);
+                throw;
+            }
+
+            var output = JsonConvert.SerializeObject(response);
             return new GenericResponse() { data = output };
         }
+
+
+
+        //public GenericResponse ConfirmDataSiswa(GenericRequest @params)
+        //{
+        //    var output = "";
+
+        //    var se = new SiswaEntity();
+        //    se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
+
+        //    CompleteDataOperationsSiswa.Initialize2(se, _unitOfWork, @params);
+
+        //    output = JsonConvert.SerializeObject(se);
+        //    return new GenericResponse() { data = output };
+        //}
+
+        public GenericResponse DeleteSiswa(GenericRequest @params)
+        {
+            var response = false;
+            var container = new CompleteDataSiswa(@params) { repository = _unitOfWork };
+
+            CompleteDataOperationsSiswa.Remove(ref container);
+
+            try
+            {
+                if (container != null)
+                {
+                    response = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            var output = JsonConvert.SerializeObject(response);
+            return new GenericResponse() { data = output };
+
+        }
+
+        //public GenericResponse DeleteSiswa(GenericRequest @params)
+        //{
+        //    var output = "";
+
+        //    var se = new SiswaEntity();
+        //    se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
+
+        //    CompleteDataOperationsSiswa.Remove(se, _unitOfWork, @params);
+
+        //    output = JsonConvert.SerializeObject(se);
+
+        //    return new GenericResponse() { data = output };
+
+        //}
 
         public List<SiswaEntity> GetAllSiswa()
         {
@@ -51,16 +116,42 @@ namespace Services
 
         public GenericResponse SaveDataSiswa(GenericRequest @params)
         {
-            var output = "";
+            var response = false;
+            var container = new CompleteDataSiswa(@params) { repository = _unitOfWork };
 
-            var se = new SiswaEntity();
-            se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
 
-            CompleteDataOperationsSiswa.Initialize(se, _unitOfWork, @params);
 
-            output = JsonConvert.SerializeObject(se);
+            CompleteDataOperationsSiswa.Initialize(ref container);
 
+            try
+            {
+                if (container != null)
+                {
+                    response = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            var output = JsonConvert.SerializeObject(response);
             return new GenericResponse() { data = output };
         }
+
+        //public GenericResponse SaveDataSiswa(GenericRequest @params)
+        //{
+        //    var output = "";
+
+        //    var se = new SiswaEntity();
+        //    se = JsonConvert.DeserializeObject<SiswaEntity>(@params.json_data);
+
+        //    CompleteDataOperationsSiswa.Initialize(se, _unitOfWork, @params);
+
+        //    output = JsonConvert.SerializeObject(se);
+
+        //    return new GenericResponse() { data = output };
+        //}
     }
 }
