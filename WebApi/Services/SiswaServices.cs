@@ -11,16 +11,19 @@ using Services.Operations;
 using Newtonsoft.Json;
 using Entites.Master;
 using DataAccess;
+using InterfaceApi.Utilities;
 
 namespace Services
 {
     public class SiswaServices : ISiswaServices
     {
         private readonly IUnitOfWork _unitOfWork;
+        private IJaroWinklerDistance _similarity;
 
-        public SiswaServices(IUnitOfWork unitOfWork)
+        public SiswaServices(IUnitOfWork unitOfWork, IJaroWinklerDistance similarity)
         {
             _unitOfWork = unitOfWork;
+            _similarity = similarity;
         }
 
         public GenericResponse ConfirmDataSiswa(GenericRequest @params)
@@ -118,16 +121,19 @@ namespace Services
         {
             var response = false;
             var container = new CompleteDataSiswa(@params) { repository = _unitOfWork };
-
-
-
             CompleteDataOperationsSiswa.Initialize(ref container);
 
+            var similarity = _similarity.proximity(container.siswa.nama_siswa.Trim(), container.siswa_data.nama_siswa.Trim()) * 100;
+            
             try
             {
                 if (container != null)
                 {
-                    response = true;
+                    if(similarity > 0)
+                    {
+                        response = true;
+                    }
+                    
                 }
             }
             catch (Exception)
