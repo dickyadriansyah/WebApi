@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entites.Request;
 using InterfaceApi.Siswa;
+using InterfaceApi.Order;
 using System.Net.Http;
 using System.Web.Http;
 using Newtonsoft.Json;
@@ -18,11 +19,13 @@ namespace Services
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISiswaServices _siswaSerivices;
+        private readonly IOrderBukuService _orderBukuService;
 
-        public RouteServices(IUnitOfWork unitOfWork, ISiswaServices siswaServices)
+        public RouteServices(IUnitOfWork unitOfWork, ISiswaServices siswaServices, IOrderBukuService orderBukuService)
         {
             _unitOfWork = unitOfWork;
             _siswaSerivices = siswaServices;
+            _orderBukuService = orderBukuService;
         }
 
         public GenericResponse ServiceDispatcher(GenericRequest request)
@@ -42,6 +45,16 @@ namespace Services
             else if (action.Trim().Equals("SaveDataSiswa", StringComparison.InvariantCultureIgnoreCase))
             {
                 var result = _siswaSerivices.SaveDataSiswa(request);
+                response.data = result.data;
+            }
+            else if(action.Trim().Equals("DeleteDataSiswa", StringComparison.InvariantCultureIgnoreCase))
+            {
+                var result = _siswaSerivices.DeleteSiswa(request);
+                response.data = result.data;
+            }
+            else if (action.Trim().Equals("InsertOrder", StringComparison.InvariantCultureIgnoreCase))
+            {
+                var result = _orderBukuService.OrderBukuProses(request);
                 response.data = result.data;
             }
             else

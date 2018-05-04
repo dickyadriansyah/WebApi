@@ -1,5 +1,6 @@
 ﻿using InterfaceApi.Services;
 using InterfaceApi.Siswa;
+using InterfaceApi.Order;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
@@ -17,6 +18,7 @@ namespace Services
         {
             registerComponent.RegisterType<IRouteServices, RouteServices>();
             registerComponent.RegisterType<ISiswaServices, SiswaServices>();
+            registerComponent.RegisterType<IOrderBukuService, OrderBukuService>();
         }
     }
 }
