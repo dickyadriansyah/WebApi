@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace WebApi.Controllers
 {
+    [Authorize]
     public class GenericController : ApiController
     {
 
@@ -23,7 +24,6 @@ namespace WebApi.Controllers
         [HttpPost]
         public GenericResponse Generic(GenericRequest request)
         {
-            //string key = string.Empty;
             return _routeServices.ServiceDispatcher(request);
         }
 
