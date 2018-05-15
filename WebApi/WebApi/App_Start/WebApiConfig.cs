@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using WebApi.ActionFilters;
 
 namespace WebApi
 {
@@ -13,7 +14,7 @@ namespace WebApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            config.Filters.Add(new LoggingFilterAttribute());
             //config.Routes.MapHttpRoute(
             //    name: "DefaultApi",
             //    routeTemplate: "api/{controller}/{id}",
